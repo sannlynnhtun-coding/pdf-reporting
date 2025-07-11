@@ -1,6 +1,11 @@
+using PdfReporting.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+IronPdf.License.LicenseKey = "YOUR_IRONPDF_LICENSE_KEY";
+builder.Services.AddTransient<PdfService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
